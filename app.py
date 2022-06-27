@@ -17,6 +17,8 @@ from spacy.tokens import DocBin
 
 nlp = spacy.load("en_core_web_sm")
 
+app = Flask(__name__)
+
 class Restrict_Entities():
 
   gender_values = ["male","female","unknown","transgender"]
@@ -175,7 +177,6 @@ def detect_demographics(path_to_model,text):
 
 
 
-app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route('/demo',methods=['POST'])
