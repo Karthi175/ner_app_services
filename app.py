@@ -282,5 +282,5 @@ def get_lab_reports():
 
   return dict1
 
-if __name__ == '__main__':
-  app.run()
+# if __name__ == '__main__':
+#   app.run()
