@@ -177,10 +177,10 @@ def detect_demographics(path_to_model,text):
 
 
 
-CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+# CORS(app)
+# app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route('/demo',methods=['POST'])
-@cross_origin()
+# @cross_origin()
 def demographics():
   dict1=request.get_data()
   dict1 = dict1.decode()
@@ -200,7 +200,7 @@ def demographics():
   return {'demo_res':demo_lis}
 
 @app.route('/vitals',methods=['POST'])
-@cross_origin()
+# @cross_origin()
 def get_vitals():
   res_dict=request.get_data()
   res_dict = res_dict.decode()
@@ -239,7 +239,6 @@ def get_vitals():
   return {'vital_res':vitals_lis}
 
 @app.route('/lab',methods=['POST'])
-@cross_origin()
 def get_lab_reports():
   dict1 = {}
   lb_model = spacy.load("./lab/model-best")
